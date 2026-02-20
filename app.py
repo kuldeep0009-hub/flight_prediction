@@ -68,7 +68,7 @@ def suggest_airport(code):
     return suggestion[0] if suggestion else None
 
 
-st.title("NomadiQ ✈️")
+st.title("NomadiQ ")
 st.caption("Flight Fare Prediction System")
 
 col1, col2 = st.columns(2)
