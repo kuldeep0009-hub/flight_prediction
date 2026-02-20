@@ -195,7 +195,4 @@ if st.button("Predict Future Fare"):
     colA.metric("Current Fare", f"₹{current_price}")
     colB.metric("Predicted Fare", f"₹{round(predicted_price,2)}")
 
-    if model_used.startswith("ML"):
-        st.success("Prediction powered by trained ML model.")
-    else:
-        st.warning("Route not in ML dataset. Using rule-based estimate.")
+
