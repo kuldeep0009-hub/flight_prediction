@@ -12,7 +12,7 @@ VALID_AIRPORTS = {
 "JAI","LKO","PAT","SXR","ATQ","IXB","IXU","IDR","TRV",
 "IXZ","IXM","IXL","DIB","SHL","JLR","RAJ","RPR","VNS","AYJ",
 "GAY","CJB","GWL","UDR","IMF","BHO","JDH","AJL","KUU",
-"IXE","IXJ","GAU","BBI","IXR","NAG","CIM"
+"IXE","IXJ","GAU","BBI","IXR","NAG","CIM","IXC"
 }
 
 
