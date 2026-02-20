@@ -8,11 +8,18 @@ import difflib
 st.set_page_config(page_title="Nomadiq | Smart Flight Predictor", layout="centered")
 
 VALID_AIRPORTS = {
-"DEL","BOM","BLR","HYD","MAA","CCU","PNQ","AMD","GOI","COK",
-"JAI","LKO","PAT","SXR","ATQ","IXB","IXU","IDR","TRV",
-"IXZ","IXM","IXL","DIB","SHL","JLR","RAJ","RPR","VNS","AYJ",
-"GAY","CJB","GWL","UDR","IMF","BHO","JDH","AJL","KUU",
-"IXE","IXJ","GAU","BBI","IXR","NAG","CIM","IXC"
+"DEL","BOM","BLR","HYD","MAA","CCU",
+"AMD","PNQ","GOI","COK","TRV","ATQ","IXC","BBI","GAU","IXR",
+"IXB","IXZ","IXM","IXL","IDR","NAG","RPR","RAJ","VNS","AYJ",
+"GAY","CJB","GWL","UDR","BHO","JDH","AJL","IMF","IXE","IXJ",
+"KUU","SHL","DIB","JLR","CIM","IXU","ISK","HBX","HJR",
+"TIR","TCR","TRZ","TNI","VGA","VTZ","PUT","RJA","MYQ",
+"IXA","IXH","IXI","IXS","IXT","IXV","TEZ","ZRH","ZER",
+"JSA","JGA","JGB","STV","SAG","BHJ","KNU",
+"LDA","PGH","SLV","SSE",
+"RDP","IXK","IXP",
+"NDC","PYB","KTU","MAU","LKO","PAT","SXR","IXG",
+"UDR","CJB","GAU","BBI","IXC","VNS","AYJ"
 }
 
 
