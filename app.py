@@ -85,7 +85,7 @@ with col2:
     arrival_time = st.time_input("Arrival Time")
     cabin_class = st.selectbox("Cabin Class", ["Economy", "Business"])
 
-current_price = st.number_input("Current Price (₹)", value=6900)
+current_price = st.number_input("Current Price (₹)", value="Enter current price")
 
 today = date.today()
 days_left = (departure_date - today).days
