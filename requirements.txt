@@ -1,0 +1,7 @@
+flask
+pandas
+numpy
+xgboost
+scikit-learn
+uvicorn
+streamlit
