@@ -7,7 +7,6 @@ import difflib
 
 st.set_page_config(page_title="Nomadiq | Smart Flight Predictor", layout="centered")
 
-# ================= VALID AIRPORTS =================
 VALID_AIRPORTS = {
 "DEL","BOM","BLR","HYD","MAA","CCU","PNQ","AMD","GOI","COK",
 "JAI","LKO","PAT","SXR","ATQ","IXB","IXU","IDR","TRV",
@@ -16,7 +15,7 @@ VALID_AIRPORTS = {
 "IXE","IXJ","GAU","BBI","IXR","NAG","CIM"
 }
 
-# ================= ML ROUTES =================
+
 ML_ROUTES = {
 ("DEL","BOM"),("BLR","DEL"),("BLR","BOM"),("HYD","DEL"),("HYD","BOM"),
 ("MAA","DEL"),("MAA","BOM"),("CCU","DEL"),("CCU","BOM"),
@@ -34,7 +33,7 @@ ML_ROUTES = {
 ("DEL","JAI"),("DEL","LKO"),("DEL","PAT"),("DEL","SXR"),
 }
 
-# ================= LOAD MODEL =================
+
 bst = xgb.Booster()
 bst.load_model("xgb_flight_model.json")
 
@@ -45,7 +44,7 @@ features = artifacts["features"]
 freq_maps = artifacts["freq_maps"]
 seat_median = artifacts["seat_median"]
 
-# ================= RULE BASED =================
+
 def fallback_prediction(current_price, days_left):
 
     if days_left >= 45:
@@ -63,12 +62,12 @@ def fallback_prediction(current_price, days_left):
 
     return round(current_price * (1 - discount), 2)
 
-# ================= SUGGESTION FUNCTION =================
+
 def suggest_airport(code):
     suggestion = difflib.get_close_matches(code, VALID_AIRPORTS, n=1, cutoff=0.6)
     return suggestion[0] if suggestion else None
 
-# ================= UI =================
+
 st.title("Nomad🔮iQ")
 st.caption("Hybrid Flight Fare Prediction System")
 
@@ -92,14 +91,14 @@ today = date.today()
 days_left = (departure_date - today).days
 st.info(f"📅 Days Before Departure: {days_left} days")
 
-# ================= PREDICTION =================
+
 if st.button("Predict Future Fare"):
 
     if days_left < 5:
         st.error("❌ Minimum 5 days required before departure.")
         st.stop()
 
-    # -------- FORMAT VALIDATION --------
+  
     if len(origin) != 3 or not origin.isalpha():
         st.error("❌ Origin must be a 3-letter airport code.")
         st.stop()
@@ -108,7 +107,7 @@ if st.button("Predict Future Fare"):
         st.error("❌ Destination must be a 3-letter airport code.")
         st.stop()
 
-    # -------- AIRPORT VALIDATION --------
+
     if origin not in VALID_AIRPORTS:
         suggestion = suggest_airport(origin)
         if suggestion:
@@ -127,7 +126,7 @@ if st.button("Predict Future Fare"):
 
     route = (origin, destination)
 
-    # ===== ML ROUTE =====
+   
     if route in ML_ROUTES:
 
         df = pd.DataFrame([{
